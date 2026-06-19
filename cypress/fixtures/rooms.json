@@ -1,22 +1,19 @@
 {
   "expectedRooms": [
     {
-      "name": "Single",
-      "imageAlt": "Single Room"
+      "name": "Single"
     },
     {
-      "name": "Double",
-      "imageAlt": "Double Room"
+      "name": "Double"
     },
     {
-      "name": "Suite",
-      "imageAlt": "Double Room"
+      "name": "Suite"
     }
   ],
   "bookingSection": {
     "headerLink": "Booking",
     "sectionTitle": "Our Rooms",
     "urlAnchor": "#booking",
-    "buttonText": "Book new"
+    "buttonText": "Book now"
   }
 }

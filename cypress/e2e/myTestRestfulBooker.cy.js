@@ -1,57 +1,39 @@
 // <reference types="cypress" />
 
-import './commands.js'
+/// <reference types="cypress" />
 
-///Avoide current exception///
-Cypress.on('uncaught:exception', (err, runnable) => {
+// Avoid current application exception
+Cypress.on('uncaught:exception', () => {
   return false
 })
 
-
-
 describe('Automation in Testing - Shady Meadows', () => {
-
   beforeEach(() => {
-  cy.visit('https://automationintesting.online/')
-})
+    cy.visit('https://automationintesting.online/')
+  })
 
   it('TC-001 - Should display the home page', () => {
-
     cy.url().should('include', 'automationintesting.online')
     cy.get('body').should('be.visible')
     cy.contains('Shady Meadows').should('be.visible')
   })
 
-
 it('TC-002 - Should display the booking section and available rooms correctly', () => {
+  cy.fixture('rooms').then((roomsData) => {
+    cy.contains('nav a', roomsData.bookingSection.headerLink).click()
 
-  // Navigate to the booking section from the header
-  cy.contains('nav a', 'Booking').click()
+    cy.url().should('include', roomsData.bookingSection.urlAnchor)
 
-  // Verify internal navigation to the booking section
-  cy.url().should('include', '#booking')
-
-  // Verify the booking / rooms section is visible
-  cy.contains('Our Rooms', { timeout: 10000 }).should('be.visible')
-
-  // Verify available room names are displayed
-  cy.contains('Single').should('be.visible')
-  cy.contains('Double').should('be.visible')
-  cy.contains('Suite').should('be.visible')
-
-  // Verify room images are visible and loaded correctly
-  cy.get('img.card-img-top').should('have.length.at.least', 3)
-
-  cy.get('img.card-img-top').each(($img) => {
-    cy.wrap($img)
+    cy.contains(roomsData.bookingSection.sectionTitle, { timeout: 10000 })
       .should('be.visible')
-      .and(($img) => {
-        expect($img[0].naturalWidth).to.be.greaterThan(0)
-      })
+
+    roomsData.expectedRooms.forEach((room) => {
+      cy.contains(room.name).should('be.visible')
+    })
+
+    cy.validateRoomImagesAreLoaded()
+
+    cy.contains(roomsData.bookingSection.buttonText).should('be.visible')
   })
-
-  // Verify booking buttons are available without clicking them
-  cy.contains('Book now').should('be.visible')
 })
-
 })
