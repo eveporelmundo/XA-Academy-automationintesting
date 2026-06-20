@@ -1,3 +1,5 @@
+![Automation in Testing Banner](docs/images/automation1.png)
+
 # Testing Project - Automation in Testing
 
 ## Project Status
@@ -311,7 +313,7 @@ The Cypress automation covers the following key scenarios:
 | TC-22.0      | Admin   | Validate contact message in admin inbox       | Automated |
 
 ---
-
+![Automated Bug Reporting Workflow](docs/images/automation.png)
 ## Manual Test Documentation
 
 The project includes a structured test case and bug report spreadsheet.
