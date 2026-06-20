@@ -1,14 +1,22 @@
 # Testing Project - Automation in Testing
 
+## Project Status
+
+**Status:** Completed
+
+---
+
 ## Project Description
 
 This project focuses on the analysis, design, execution, documentation, and automation of tests for the following web application:
 
 https://automationintesting.online/
 
-The application simulates a hotel booking platform where users can check available rooms, make reservations, send contact messages, and access an administration panel.
+The application simulates a Bed & Breakfast booking platform called **Shady Meadows B&B**, where users can view available rooms, make reservations, submit contact messages, and access an administration panel.
 
-The main objective of this project is to apply functional testing, exploratory testing, form validation testing, and test automation practices in order to identify critical user flows, detect defects, document evidence, and improve the overall quality of the application.
+The objective of this project was to apply manual testing, exploratory testing, functional testing, form validation testing, bug reporting, and Cypress automation in a realistic QA workflow.
+
+The project also includes workflow automation using **n8n**, **Trello**, and **Google Sheets / Excel** to improve bug reporting and traceability.
 
 ---
 
@@ -20,270 +28,480 @@ The main objective of this project is to apply functional testing, exploratory t
 
 ## General Objective
 
-Evaluate the correct behavior of the Automation in Testing web application by verifying its main user flows, identifying functional, visual, and validation issues, and documenting the results through manual and automated testing practices.
+Evaluate the correct behavior of the Automation in Testing web application by validating its main user flows, identifying functional, UI, validation, and accessibility issues, and documenting the results through manual and automated QA practices.
 
 ---
 
 ## Specific Objectives
 
-* Analyze the main functionality of the web application.
+* Analyze the main functionality of the application.
 * Identify critical business flows.
-* Design manual test cases.
-* Execute functional tests through the user interface.
-* Validate forms using valid and invalid data.
-* Verify the behavior of the admin login.
-* Register bugs with clear evidence.
-* Automate selected test scenarios using Cypress.
-* Automate bug reporting workflows using n8n.
-* Integrate bug tracking with Trello.
-* Automate bug documentation in Excel / Google Sheets.
-* Document the results of the testing process.
+* Design and execute manual test cases.
+* Validate positive, negative, and edge case scenarios.
+* Automate key test cases using Cypress.
+* Use fixtures to manage test data.
+* Use custom commands to reduce duplicated Cypress logic.
+* Report bugs with clear evidence and reproduction steps.
+* Automate bug card creation in Trello using n8n.
+* Automatically register Trello ticket numbers in the test case spreadsheet.
+* Keep a structured test case and bug report document.
+* Document the project clearly in GitHub.
+
+---
+
+## Application Under Test
+
+**Name:** Shady Meadows B&B
+**URL:** https://automationintesting.online/
+**Type:** Hotel / Bed & Breakfast booking application
+
+Main modules tested:
+
+* Home Page
+* Rooms
+* Booking Flow
+* Contact Form
+* Admin Panel
+* UI / Accessibility
+* Bug Reporting Workflow
 
 ---
 
 ## Scope of Testing
 
-The testing process focuses on the following modules:
+The testing process covered the following areas:
 
-### Home
+### Home Page
 
-* Initial page loading.
-* Display of main texts, images, and sections.
-* General navigation.
-* Basic responsive behavior.
+* Page loading.
+* Header navigation.
+* Main content visibility.
+* Contact section availability.
 
-### Rooms
+### Rooms / Booking Section
 
 * Display of available rooms.
-* Validation of room information, including price, description, and features.
-* Room selection for booking.
+* Room names and room cards.
+* Room images.
+* Booking entry points.
+* Navigation to room reservation page.
 
-### Booking
+### Booking Flow
 
+* Room selection.
 * Date selection.
-* User data input.
-* Mandatory field validation.
-* Booking confirmation.
-* Validation of invalid dates and incorrect data.
-
-### Contact
-
-* Contact form submission with valid data.
-* Empty field validation.
+* Guest information form.
+* Successful booking confirmation.
+* Empty form validation.
 * Invalid email validation.
-* Validation of short or invalid messages.
+* Invalid input validation.
+* Validation of past or unavailable dates.
 
-### Admin
+### Contact Form
+
+* Valid contact form submission.
+* Required field validation.
+* Confirmation message after submission.
+
+### Admin Panel
 
 * Login with valid credentials.
 * Login with invalid credentials.
-* Access to the admin panel.
-* Visualization of bookings, rooms, and messages.
+* Booking record validation.
+* Contact message validation in admin inbox.
+
+### Accessibility / UI
+
+* Image alt attributes.
+* UI consistency.
+* Form validation messages.
+* Visibility of key elements.
 
 ---
 
 ## Out of Scope
 
-The following items are not included in this first stage:
+The following items were not included in this project stage:
 
 * Performance testing.
-* Advanced security testing.
-* Complete automation of all test cases.
-* Database testing.
-* Full cross-browser compatibility testing.
 * Load testing.
 * Stress testing.
+* Advanced security testing.
+* Database-level testing.
+* Full cross-browser compatibility testing.
+* Full API test suite coverage.
 
 ---
 
 ## Testing Types Applied
 
-* Exploratory testing.
 * Functional testing.
-* Basic regression testing.
-* Form validation testing.
-* UI testing.
+* Exploratory testing.
 * Smoke testing.
+* Regression testing.
+* UI testing.
+* Form validation testing.
 * Negative testing.
-* Automated end-to-end testing with Cypress.
-* Bug tracking and workflow automation.
+* Edge case testing.
+* End-to-end testing.
+* Basic accessibility validation.
+* Automated testing with Cypress.
 
 ---
 
 ## Tools Used
 
+* Cypress.
+* JavaScript.
+* Visual Studio Code.
 * Google Chrome.
 * Chrome DevTools.
-* Cypress.
+* Git.
 * GitHub.
+* Google Sheets / Excel.
 * Trello.
 * n8n.
-* Excel / Google Sheets.
-* Screenshots as test evidence.
-* Postman, for API testing when applicable.
+* Screenshots and visual evidence.
 
 ---
 
-## Automation Implemented
-
-### Cypress Test Automation
-
-Cypress was used to automate selected end-to-end test scenarios for the web application.
-
-The automated tests include validations for key flows such as:
-
-* Page loading.
-* Room availability.
-* Booking form behavior.
-* Contact form validation.
-* Admin login scenarios.
-* Positive and negative test cases.
-
-### n8n Workflow Automation
-
-n8n was used to automate parts of the testing workflow, especially the bug reporting process.
-
-The automation was designed to support the QA process by reducing manual work and keeping bug documentation organized.
-
-The n8n workflow includes:
-
-1. Receiving or processing bug information.
-2. Sending bug data to Trello.
-3. Creating or updating bug cards.
-4. Registering bug details in an Excel / Google Sheets file.
-5. Keeping the bug tracking process centralized and consistent.
-
-### Trello Bug Tracking
-
-Trello was used as a visual bug tracking tool.
-
-Each bug card can include:
-
-* Bug title.
-* Module affected.
-* Steps to reproduce.
-* Expected result.
-* Actual result.
-* Priority.
-* Severity.
-* Evidence.
-* Current status.
-
-### Excel / Google Sheets Bug Report Automation
-
-Excel / Google Sheets was used to maintain a structured bug report.
-
-The spreadsheet includes information such as:
-
-* Bug ID.
-* Title.
-* Module.
-* Environment.
-* Priority.
-* Severity.
-* Steps to reproduce.
-* Expected result.
-* Actual result.
-* Evidence.
-* Status.
-* Trello card link.
-
-This allows the project to keep a clear record of detected bugs while also connecting the spreadsheet with the Trello workflow.
-
----
-
-## Critical Flows Analyzed
-
-### Flow 1: Room Booking
-
-1. Navigate to the home page.
-2. View available rooms.
-3. Select a room.
-4. Choose check-in and check-out dates.
-5. Complete the user information.
-6. Confirm the booking.
-7. Verify the confirmation message.
-
-### Flow 2: Contact Form
-
-1. Navigate to the contact section.
-2. Complete the name, email, phone, subject, and message fields.
-3. Submit the form.
-4. Verify the confirmation message or validation errors.
-
-### Flow 3: Admin Login
-
-1. Navigate to `/admin`.
-2. Enter username and password.
-3. Submit the login form.
-4. Verify successful access or authentication error message.
-
----
-
-## Bug Report Format
-
-```txt
-ID:
-Title:
-Module:
-Environment:
-Priority:
-Severity:
-
-Preconditions:
-
-Steps to Reproduce:
-1.
-2.
-3.
-
-Expected Result:
-
-Actual Result:
-
-Evidence:
-
-Status:
-
-Trello Card Link:
-```
-
----
-
-## Project Structure
+## Cypress Project Structure
 
 ```txt
 project-root/
 │
 ├── cypress/
 │   ├── e2e/
+│   │   └── myTestRestfulBooker.cy.js
+│   │
 │   ├── fixtures/
+│   │   ├── admin.json
+│   │   ├── booking.json
+│   │   ├── contact.json
+│   │   └── rooms.json
+│   │
 │   └── support/
+│       ├── commands.js
+│       └── e2e.js
 │
-├── cypress.config.js
-├── package.json
-├── package-lock.json
+├── node_modules/
 ├── .gitignore
+├── cypress.config.js
+├── package-lock.json
+├── package.json
 └── README.md
+```
+
+---
+
+## Cypress Files Description
+
+### `cypress/e2e/myTestRestfulBooker.cy.js`
+
+Main Cypress spec file.
+
+It contains the automated test suite for:
+
+* Home page validation.
+* Available rooms validation.
+* Booking flow.
+* Booking form validations.
+* Contact form submission.
+* Admin panel checks.
+
+The test suite is organized into `describe` blocks according to the tested module.
+
+---
+
+### `cypress/fixtures/admin.json`
+
+Stores admin panel credentials.
+
+Used for:
+
+* Valid admin login.
+* Invalid admin login.
+* Admin panel validation.
+
+---
+
+### `cypress/fixtures/booking.json`
+
+Stores booking test data.
+
+Used for:
+
+* Valid guest booking.
+* Invalid email validation.
+* Invalid input validation.
+* Past date scenarios.
+* Different guest datasets.
+
+Using this fixture keeps test data separated from test logic.
+
+---
+
+### `cypress/fixtures/contact.json`
+
+Stores contact form test data.
+
+Used for:
+
+* Valid contact form submission.
+* Contact form validation scenarios.
+
+---
+
+### `cypress/fixtures/rooms.json`
+
+Stores static room-related data.
+
+Used for:
+
+* Room names.
+* Room validation.
+* Booking section checks.
+
+---
+
+### `cypress/support/commands.js`
+
+Contains reusable Cypress custom commands.
+
+Custom commands were used to reduce duplicated code and make the tests easier to read.
+
+Examples of reusable actions:
+
+* Selecting booking dates.
+* Filling the booking form.
+* Filling the contact form.
+* Logging into the admin panel.
+* Validating loaded images.
+
+---
+
+### `cypress/support/e2e.js`
+
+Cypress support configuration file.
+
+It imports global Cypress support logic and custom commands.
+
+---
+
+## Automated Test Coverage
+
+The Cypress automation covers the following key scenarios:
+
+| Test Case ID | Area    | Scenario                                      | Status    |
+| ------------ | ------- | --------------------------------------------- | --------- |
+| TC-1.0       | Home    | Load home page and validate main content      | Automated |
+| TC-2.0       | Rooms   | Display available rooms                       | Automated |
+| TC-3.0       | Booking | Open booking form from room card              | Automated |
+| TC-4.0       | Booking | Complete booking form with valid data         | Automated |
+| TC-5.0       | Booking | Select valid booking dates                    | Automated |
+| TC-6.0       | Booking | Submit empty booking form and validate errors | Automated |
+| TC-7.0       | Booking | Validate invalid email error                  | Automated |
+| TC-9.0       | Booking | Validate invalid input messages               | Automated |
+| TC-12.0      | Booking | Validate successful booking confirmation      | Automated |
+| TC-17.0      | Contact | Validate required contact form fields         | Automated |
+| TC-18.0      | Contact | Submit contact form successfully              | Automated |
+| TC-19.0      | Admin   | Login with valid admin credentials            | Automated |
+| TC-20.0      | Admin   | Reject invalid admin credentials              | Automated |
+| TC-21.0      | Admin   | Validate booking record in admin              | Automated |
+| TC-22.0      | Admin   | Validate contact message in admin inbox       | Automated |
+
+---
+
+## Manual Test Documentation
+
+The project includes a structured test case and bug report spreadsheet.
+
+The spreadsheet contains:
+
+* Test Case ID.
+* Module.
+* Description.
+* Preconditions.
+* Steps.
+* Expected Result.
+* Actual Result.
+* Executed.
+* Status.
+* Criticality.
+* Automated.
+* Trello Ticket.
+
+The spreadsheet was designed to support both manual testing and automation traceability.
+
+---
+
+## Bug Reporting Workflow
+
+Bugs were documented using a structured format:
+
+```txt
+Bug ID:
+Module:
+Title:
+Description:
+Preconditions:
+Steps to Reproduce:
+Expected Result:
+Actual Result:
+Severity:
+Priority:
+Criticality:
+Status:
+Automated:
+Trello Ticket:
+Evidence:
+```
+
+Bugs with `Status = FAIL` in the test case sheet were linked to the bug report area.
+
+---
+
+## n8n Automation Workflow
+
+n8n was used to automate part of the QA bug reporting process.
+
+The workflow was designed to reduce manual work when a test case failed and needed to be reported as a bug.
+
+### Workflow Objective
+
+Automatically create a Trello bug card from the spreadsheet and return the Trello ticket information back to the test case document.
+
+### Workflow Logic
+
+1. A test case is marked as `FAIL` in the spreadsheet.
+2. The bug information is prepared using the test case data.
+3. n8n creates a new Trello card in the bug board.
+4. The Trello card includes:
+
+   * Bug ID.
+   * Title.
+   * Module.
+   * Steps to reproduce.
+   * Expected result.
+   * Actual result.
+   * Severity.
+   * Priority.
+   * Evidence when available.
+5. Trello returns the created card information.
+6. n8n updates the spreadsheet with the Trello ticket number or Trello card link.
+7. The spreadsheet keeps traceability between:
+
+   * Test case.
+   * Bug report.
+   * Trello ticket.
+
+### Benefits of the n8n Automation
+
+* Reduces duplicated manual work.
+* Keeps bug reports consistent.
+* Improves traceability.
+* Connects test documentation with Trello.
+* Makes it easier to track which failed test cases were already reported.
+* Helps keep the QA workflow closer to a real project environment.
+
+---
+
+## Trello Bug Board
+
+Trello was used to manage reported bugs visually.
+
+Suggested columns:
+
+* Backlog of Bugs.
+* In Progress.
+* Ready for Review.
+* Closed.
+
+Each Trello card contains structured information about the defect, including reproduction steps, expected result, actual result, severity, priority, and evidence.
+
+---
+
+## Evidence and Screenshots
+
+Screenshots can be stored in the following project folder:
+
+```txt
+docs/images/
+```
+
+Recommended screenshots to include:
+
+```txt
+docs/images/cypress-run.png
+docs/images/test-cases-sheet.png
+docs/images/bug-reports-sheet.png
+docs/images/trello-board.png
+docs/images/n8n-workflow.png
+docs/images/booking-validation-error.png
+docs/images/contact-confirmation.png
+```
+
+Markdown example:
+
+```md
+![Cypress test execution](docs/images/cypress-run.png)
+```
+
+Suggested evidence sections:
+
+### Cypress Test Execution
+
+```md
+![Cypress test execution](docs/images/cypress-run.png)
+```
+
+### Test Case Spreadsheet
+
+```md
+![Test case spreadsheet](docs/images/test-cases-sheet.png)
+```
+
+### Bug Report Spreadsheet
+
+```md
+![Bug report spreadsheet](docs/images/bug-reports-sheet.png)
+```
+
+### Trello Bug Board
+
+```md
+![Trello bug board](docs/images/trello-board.png)
+```
+
+### n8n Workflow
+
+```md
+![n8n workflow](docs/images/n8n-workflow.png)
 ```
 
 ---
 
 ## How to Run the Project
 
-### Install Dependencies
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+```
+
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Open Cypress
+### 3. Open Cypress
 
 ```bash
 npx cypress open
 ```
 
-### Run Cypress Tests in Headless Mode
+### 4. Run Cypress Tests in Headless Mode
 
 ```bash
 npx cypress run
@@ -291,20 +509,78 @@ npx cypress run
 
 ---
 
-## Expected Deliverables
+## Git Workflow Used
 
-* Manual test cases.
-* Automated Cypress test cases.
-* Bug reports with evidence.
-* Trello board with registered bugs.
-* Excel / Google Sheets bug tracking file.
-* n8n automation workflow.
-* Final testing documentation.
+Basic Git workflow used during the project:
+
+```bash
+git status
+git add .
+git commit -m "Commit message"
+git push
+```
+
+The repository was kept updated through GitHub during the development of the automated tests and documentation.
 
 ---
 
-## Project Status
+## Key QA Decisions
 
-In progress.
+### Use of Fixtures
 
-This project is part of a QA Automation learning process focused on strengthening manual testing, test automation, bug reporting, and workflow automation skills.
+Fixtures were used to keep test data separated from test logic.
+
+This makes the tests easier to maintain because data can be updated without modifying the Cypress test flow.
+
+### Use of Custom Commands
+
+Custom commands were used for repeated actions such as filling forms, selecting dates, and logging into the admin panel.
+
+This improves readability and avoids unnecessary code repetition.
+
+### Use of Assertions
+
+Assertions were added to validate both UI behavior and expected outcomes, such as:
+
+* Page content visibility.
+* Successful navigation.
+* Form validation messages.
+* Booking confirmation.
+* Admin panel access.
+* Contact message confirmation.
+
+### Handling Application Exceptions
+
+The application sometimes throws a React runtime exception. Cypress was configured to avoid stopping all test execution because of known application-side exceptions, while still allowing the QA process to continue.
+
+---
+
+## Known Issues Found
+
+Examples of issues identified during testing:
+
+* Room image `alt` attributes are duplicated and do not describe the correct room type.
+* Some validation flows require careful handling because the booking process has two different `Reserve Now` buttons.
+* Some UI validations depend on selecting dates before reaching the guest form.
+* The application may throw a React runtime exception during page load.
+
+---
+
+## Final Deliverables
+
+* Cypress automation project.
+* Manual test case spreadsheet.
+* Bug report spreadsheet.
+* Trello bug board.
+* n8n automation workflow.
+* README documentation.
+* Screenshots / visual evidence.
+* GitHub repository.
+
+---
+
+## Final Status
+
+The project is completed.
+
+The final version includes manual testing documentation, automated Cypress test cases, bug reporting, Trello tracking, and n8n workflow automation for bug card creation and ticket traceability.
