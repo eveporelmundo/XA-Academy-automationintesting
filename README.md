@@ -18,8 +18,11 @@ The application simulates a Bed & Breakfast booking platform called **Shady Mead
 
 The objective of this project was to apply manual testing, exploratory testing, functional testing, form validation testing, bug reporting, and Cypress automation in a realistic QA workflow.
 
-The project also includes workflow automation using **n8n**, **Trello**, and **Google Sheets / Excel** to improve bug reporting and traceability.
+The project also includes workflow automation using **n8n**, **Trello**. 
+https://trello.com/b/a3HXQ0Va/cypress-automationintesting-evelyn-grau
 
+**Google Sheets / Excel** to improve bug reporting and traceability.
+https://drive.google.com/drive/folders/1IYTMyp7xeRAmblhQPkhA9NRaTJvYDOTp?usp=sharing
 ---
 
 ## Participant
